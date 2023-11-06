@@ -1,23 +1,17 @@
-def is_prime(N):  #Define is_prime function
-    if N <=1:
-        return False
-    for i in range(2,N):
-        if N%i == 0:   #if remainder equal to 0 then it's not a prime_number
-            return False
-    return True
+N = int(input("Enter the value of N: "))
+count = 0  # Count how many prime numbers found
+num = 2  # Starting number to check for prime numbers
 
-N =int(input("enter the value of N"))
-def n_prime(N):
-    num = 2  #prime_number start from 2
-    count =0 #count how many prime_number
-    while count<N:
-        if is_prime(num):
-            print(num)
-            count += 1
-        num +=1
-print(n_prime(N))
-
-
+while count < N:
+    isPrime = True  # Assuming the number is prime initially
+    for i in range(2, num):
+        if num % i == 0:  #if remainder equal to 0 then it's not a prime_number
+            isPrime = False
+            break
+    else:
+        print(num)
+        count += 1  # Increment the prime number count
+    num += 1
 
 
 
